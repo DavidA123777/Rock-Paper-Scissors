@@ -8,8 +8,6 @@ function getComputerChoice() {
 // 2 = scissors
 
 
-let humanScore = 0;
-let computerScore = 0;
 
 function getHumanChoice(){
   let val;
@@ -73,19 +71,28 @@ console.log(`Your score is ${humanScore} and the computer's score is ${computerS
 
 }
 
+let humanScore = 0;
+let computerScore = 0;
 
-while(humanScore < 2 && computerScore < 2){
+function playGame(){
 
-let humanSelection = getHumanChoice();
-let computerSelection = getComputerChoice();
+  while(humanScore < 2 && computerScore < 2){
 
-  playRound(humanSelection, computerSelection);
+    let humanSelection = getHumanChoice();
+    let computerSelection = getComputerChoice();
+    
+      playRound(humanSelection, computerSelection);
+    }
+    
+    if (humanScore === 2){
+      console.log(`You win, Your final score is ${humanScore} and the computer's final score is ${computerScore}`);
+    
+    }
+    else{
+      console.log(`You lose, Your final score is ${humanScore} and the computer's final score is ${computerScore}`);
+    }
+
 }
 
-if (humanScore === 2){
-  console.log(`You win, Your final score is ${humanScore} and the computer's final score is ${computerScore}`);
+playGame();
 
-}
-else{
-  console.log(`You lose, Your final score is ${humanScore} and the computer's final score is ${computerScore}`);
-}
